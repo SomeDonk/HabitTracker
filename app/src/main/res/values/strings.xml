@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Habit Tracker</string>
+    <string name="tab_text_1">Habits</string>
+    <string name="tab_text_2">Settings</string>
+</resources>
