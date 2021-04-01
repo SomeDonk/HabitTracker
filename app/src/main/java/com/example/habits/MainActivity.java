@@ -26,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
+        tabs.getTabAt(0).setIcon(R.drawable.ic_favorite_black_24dp);
+        tabs.getTabAt(1).setIcon(R.drawable.ic_settings_black_24dp);
+
         FloatingActionButton fab = findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
