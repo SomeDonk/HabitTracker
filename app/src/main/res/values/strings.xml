@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Habit Tracker</string>
-    <string name="tab_text_1"></string>
-    <string name="tab_text_2"></string>
+    <string name="sample_completions">2</string>
+    <string name="sample_goal">4</string>
+    <string name="habit_log_text">Log it</string>
+    <string name="sample_habit">Drink a glass of water</string>
+    <string name="up_completions">+</string>
+    <string name="down_completions">-</string>
+    <string name="completions_divider"> "////" </string>
 </resources>

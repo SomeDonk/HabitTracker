@@ -17,7 +17,6 @@ import com.example.habits.R;
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2};
     private final Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {
@@ -35,12 +34,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         else {
             return SettingsFragment.newInstance(position + 1);
         }
-    }
-
-    @Nullable
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return mContext.getResources().getString(TAB_TITLES[position]);
     }
 
     @Override
