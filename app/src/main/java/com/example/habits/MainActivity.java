@@ -1,7 +1,10 @@
 package com.example.habits;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.habits.ui.main.Habit;
+import com.example.habits.ui.main.HabitService;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
@@ -26,16 +29,17 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
-        tabs.getTabAt(0).setIcon(R.drawable.ic_favorite_black_24dp);
-        tabs.getTabAt(1).setIcon(R.drawable.ic_settings_black_24dp);
+        tabs.getTabAt(0).setIcon(R.drawable.ic_list_black_24dp);
+        tabs.getTabAt(1).setIcon(R.drawable.ic_timeline_black_24dp);
 
         FloatingActionButton fab = findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(MainActivity.this, AddHabitActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
         });
     }

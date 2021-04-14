@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class HabitFragment extends Fragment {
+public class HabitFragment extends Fragment implements HabitService.HabitObserver {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
 
@@ -54,9 +54,15 @@ public class HabitFragment extends Fragment {
         habitRecyclerViewAdapter = new HabitRecyclerViewAdapter();
         followingRecyclerView.setAdapter(habitRecyclerViewAdapter);
 
+        HabitService.getInstance().setObserver(this);
+
         return root;
     }
 
+    @Override
+    public void newHabitCompleted(Habit newHabit) {
+        habitRecyclerViewAdapter.addItem(newHabit);
+    }
 
 
     private class HabitHolder extends RecyclerView.ViewHolder {
@@ -159,9 +165,9 @@ public class HabitFragment extends Fragment {
 
 
         void loadDummyHabits() {
-            addItem(new Habit("Drink a glass of water", 2, 4));
-            addItem(new Habit("Slap a fish", 0, 50));
-            addItem(new Habit("Wear a mask", 1, 1));
+//            addItem(new Habit("Drink a glass of water", 2, 4));
+//            addItem(new Habit("Slap a fish", 0, 50));
+//            addItem(new Habit("Wear a mask", 1, 1));
         }
     }
 }
